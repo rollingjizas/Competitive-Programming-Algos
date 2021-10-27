@@ -1,0 +1,134 @@
+#include <iostream>
+#include<conio.h>
+#define MAX_SIZE 5
+int prec(char input);
+using namespace std;
+void merge_sort(int, int);
+void merge_array(int, int, int, int);
+int arsort[MAX_SIZE];
+void merge_sort(int inter, int jnter) {
+    int mter;
+  if (inter < jnter) {
+mter = (inter + jnter) / 2;
+ merge_sort(inter, mter);
+merge_sort(mter + 1, jnter);
+ merge_array(inter, mter, mter + 1, jnter);}}
+void merge_array(int anter, int bnter, int cnter, int dnter) {
+int tnter[60];
+int inter = anter, jnter = cnter, knter = 0;
+while (inter <= bnter && jnter <= dnter) {
+if (arsort[inter] < arsort[jnter])
+tnter[knter++] = arsort[inter++];
+else
+tnter[knter++] = arsort[jnter++];
+} while (inter <= bnter)
+ tnter[knter++] = arsort[inter++];
+while (jnter <= dnter)
+ tnter[knter++] = arsort[jnter++];
+for (inter = anter, jnter = 0; inter <= dnter; inter++, jnter++)
+arsort[inter] = tnter[jnter];}
+int main() { std::string input; int pili;
+cout << "      /+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/" <<"\n";
+cout << "      ^ - - - - SORTING ALGORITHM - - - - ^" <<"\n";
+cout << "      ^ - -  INSERT SORT & MERGE SORT - - ^" <<"\n";
+cout << "      ^     [1] Insertion Sort Ascending  ^" <<"\n";
+cout << "      ^     [2] Insertion Sort Descending ^" <<"\n";
+cout << "      ^     [3] Merge Sort Ascending      ^" <<"\n";
+cout << "      ^     [4] Merge Sort Descending     ^" <<"\n";
+cout << "      /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/" <<"\n";
+cout << "      ^Select [ 1-4 ]: "; cin>>pili; switch(pili){
+switch(pili){
+ case 1:{ system("cls");int jnter2,nter2,tem2,anter2[50];
+cout << "      /%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/" <<"\n";			
+cout<< "               # of elements: "; cin>>nter2;
+cout << "      /%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/" <<"\n";	
+	for(int inter2=0;inter2<nter2; inter2++){
+cout << "              Elements:"  << " [ " << inter2 <<" ] ";
+cin>> anter2[inter2]; }
+cout << "      /%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/";
+for(int inter3=1;inter3<=nter2-1;inter3++){
+tem2=anter2[inter3];
+jnter2=inter3-1;
+while((tem2<anter2[jnter2])&&(jnter2>=0)){
+anter2[jnter2+1]=anter2[jnter2];
+jnter2=jnter2-1; }
+anter2[jnter2+1]=tem2; cout<<"\n";
+for(int exodia=0;exodia<nter2; exodia++){
+cout<<" ---> [ " << anter2[exodia] << " ] ";
+}} cout <<"\n";
+cout << "      /%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/%/" <<"\n"; break;}
+case 2:{ system("cls");
+int jnter4,nter4,tem4,anter4[50];
+cout << "      /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/" <<"\n";
+cout<<"                # of elements: ";
+cin>>nter4;
+cout << "      /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/" <<"\n";	
+for(int inter4=0;inter4 < nter4; inter4++) 	{
+cout << "              Elements: "  << " [ " <<inter4 <<" ] ";
+cin>>anter4[inter4];}
+cout << "      /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/";
+for(int inter4=1; inter4 <= nter4-1; inter4++){
+tem4=anter4[inter4];
+jnter4=inter4-1;
+while((tem4 > anter4[jnter4]) && (jnter4 >=0)){
+anter4[jnter4 + 1]= anter4[jnter4];
+jnter4=jnter4-1;}
+ anter4[jnter4+1]=tem4; cout<<"\n";
+for(int evodia=0; evodia < nter4; evodia++){
+cout<<" <--- [ " << anter4[evodia] << " ] ";
+}cout <<"\n";} 
+cout << "      /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/" <<"\n"; break;}
+case 3:{ system("cls"); int inter6;
+cout << "      /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/" <<"\n";	
+cout << "              Enter the Number: " << MAX_SIZE <<"\n";
+cout << "      /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/" <<"\n";
+cout << "              Elements: " << "\n";
+for (inter6 = 0; inter6 < MAX_SIZE; inter6++)
+cin >> arsort[inter6];
+cout << "      /------------------------------------------------------/" <<"\n";
+cout << "      ^Inputted Data Elements: ";	
+cout <<"\n";
+cout <<"      ";
+ for (inter6 = 0; inter6 < MAX_SIZE; inter6++) {
+cout<< " --  "<<" [" << arsort[inter6] << "] ";
+}cout <<"\n";
+cout << "      /------------------------------------------------------/" <<"\n";
+merge_sort(0, MAX_SIZE - 1);	
+cout << "      ^Inputted Sorted Data: ";
+cout <<"\n";
+cout <<"      ";
+for (inter6 = 0; inter6 < MAX_SIZE; inter6++) {
+cout<<" <-- "<<" [" << arsort[inter6] << "] ";
+} cout <<"\n";
+cout << "      /------------------------------------------------------/" <<"\n";
+break; }
+case 4:{ system("cls");  int inter7, jnter7,ddds; cout << "      /@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/" <<"\n";cout << "      ^Enter the Number: " << MAX_SIZE << "\n";
+cout << "      /@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/@/" <<"\n";
+cout << "      ^ Elements to Sort: " <<"\n";
+for (inter7 = 0; inter7 < MAX_SIZE; inter7++)
+cin >> arsort[inter7];
+cout << "      /------------------------------------------------------/" <<"\n";
+cout << "      ^Inputted Data Elements: ";
+cout <<"\n"; cout <<"      ";
+for (inter7 = 0; inter7 < MAX_SIZE; inter7++) {
+cout<< " --  "<<" [" << arsort[inter7] << "] "; }
+cout <<"\n"; cout << "      /------------------------------------------------------/" <<"\n"; merge_sort(0, MAX_SIZE - 1);
+ cout << "      ^Inputted Sorted Data: ";
+for (inter7 = 0; inter7 < MAX_SIZE; ++inter7) {
+for(jnter7 = inter7 + 1; jnter7 < MAX_SIZE; ++jnter7){
+ if(arsort[inter7]<MAX_SIZE){
+ddds = arsort[inter7];
+arsort[inter7]=arsort[jnter7];
+arsort[jnter7] = ddds; }}} cout <<"\n"; cout <<"      "; 
+for(inter7 = 0; inter7 < MAX_SIZE ;++inter7){
+cout<<" --> "<<" [" << arsort[inter7] << "] ";}
+cout <<"\n"; cout << "      /------------------------------------------------------/" <<"\n"; break;
+default:{
+cout << "\n";
+cout <<"     ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" <<"\n"; 
+cout <<"    | | | | | | |ERROR: ONLY [1-4]| | | | | | | |" <<"\n"; 
+cout <<"     ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" <<"\n" << "\n"
+break; }}
+}//switch
+system("pause");
+}
