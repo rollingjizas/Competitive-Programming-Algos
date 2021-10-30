@@ -1,0 +1,91 @@
+#include<iostream>
+#include<stdlib.h>
+#include<cstring>
+using namespace std;
+
+struct node{
+string data;
+struct node* left;
+struct node* right;
+};
+struct node*newNode(string data){
+	struct node* node= new struct node();
+	node->data=data;
+	node->left=NULL;
+	node->right=NULL;
+	return(node);
+}
+int main(){
+
+	int pili;
+		
+
+	cout<<"**************************************************"<< "\n";
+	cout<<"*                  MAIN MENU                     *"<< "\n";
+	cout<<"=================================================="<< "\n";
+	cout<<"* [1] Root: A             | [2] Root: A          *"<< "\n"; 
+	cout<<"* Left Tree: A,B,D,E,F    | Left Tree: A,B,D,E   *"<< "\n"; 
+	cout<<"* Left Successor: A,B,E   | Left Successor: A,B  *"<< "\n";
+	cout<<"* Right Tree:A,C,G,H,J,K,L| Right Tree: A,C,F    *"<< "\n";
+	cout<<"* Right Successor: A,C,H,J| Right Successor: A,C *"<< "\n";
+	cout<<"* Terminology 1:D,F       | Terminology 1: D,E   *"<< "\n";
+	cout<<"* Terminology 2:G,L,K     | Terminology 2:F      *"<< "\n";
+	cout<<"=================================================="<< "\n";
+	cout<<"Select #. ";
+	cin>> pili;
+ 	system("cls");
+	switch(pili){
+	
+	case 1:{
+	struct node* newRoot=newNode("A");
+	
+	cout<<"\t\t\t  " << newRoot->data<<"\n";
+	cout<<"\t\t        " << "/"<<"   "<<"\\"<<"\n";
+	newRoot->left=newNode("B");
+	newRoot->right=newNode("C");
+	cout<<"\t\t      "<<newRoot->left->data<<"       "<<newRoot->right->data<< "\n";
+	cout<<"\t            "<<"/"<<"   "<<"\\"<<"   "<<"/"<<"   "<<"\\"<< "\n";
+	newRoot->left->left=newNode("D");
+	newRoot->left->right=newNode("E");
+	newRoot->right->left=newNode("G");
+	newRoot->right->right=newNode("H");
+	cout<<"\t           "<<newRoot->left->left->data<<"     "<<newRoot->left->right->data<<" "<<newRoot->right->left->data<<"     "<<newRoot->right->right->data<<"\n";
+	cout<<"\t\t        "<<"/"<<"      "<<"/"<<"   "<<"\\"<<"\n";
+	newRoot->left->right=newNode("F");
+	newRoot->right->left=newNode("J");
+	newRoot->right->right=newNode("K");
+	
+	cout<<"\t\t       "<<newRoot->left->right->data<<"      "<<newRoot->right->left->data<<"     "<<newRoot->right->right->data<<"\n";
+	cout<<"\t\t\t     "<<"/";
+	newRoot->right->left=newNode("L");
+	cout<<"\t           "<<"\n";;
+	cout<<"\t\t\t    "<<newRoot->right->left->data <<"\n"<<"\n";
+	cout<<"* PREORDER: A,B,D,E,C,G,H,J,L,K"<< "\n";
+	cout<<"* INORDER: D,B,E,A,G,C,L,J,H,K" << "\n";
+	cout<<"* POSTORDER: D,E,B,G,L,J,K,H,C,A"<<"\n" <<"\n";
+
+		   		}
+		   			break;
+		   
+	case 2:{
+
+struct node* newRoot=newNode("A");
+	cout<<"\t\t\t  "<<newRoot->data<<"\n";
+	cout<<"\t\t        " << "/"<<"   "<<"\\"<<"\n";
+	newRoot->left=newNode("B");
+	newRoot->right=newNode("C");
+	cout<<"\t\t      "<<newRoot->left->data<<"       "<<newRoot->right->data<<"\n";
+	cout<<"\t            "<<"/"<<"   "<<"\\"<<"   "<<"/"<<"\n";
+	newRoot->left->left=newNode("D");
+	newRoot->left->right=newNode("E");
+	newRoot->right->left=newNode("F");
+	cout<<"\t\t   "<<newRoot->left->left->data<<"    "<<newRoot->left->right->data<<"   "<<newRoot->right->left->data<<"   "<<"\n";
+	cout<<"* PREORDER: A,B,D,E,C,F"<< "\n";
+	cout<<"* INORDER: D,B,E,A,F,C" << "\n";
+	cout<<"* POSTORDER: D,E,B,F,C,A"<< "\n" <<"\n";
+		   }
+	}
+
+	system("pause");
+}
+
