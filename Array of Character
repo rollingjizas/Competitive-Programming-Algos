@@ -1,0 +1,96 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+  int choice, sel;
+  std:: string name,  n, name1, wo; 
+  char ch, ho; 
+   
+
+do{
+
+
+  cout << "************************" << endl; 
+  cout << "      ~MAIN MENU~        " << endl ;
+  cout << "[1]. String " << endl ;
+  cout << "[2]. Array of Character" << endl ;
+
+ cout << "Enter Number: " ;
+ cin >> choice ;
+ clrscr();
+
+
+do{
+
+if(choice == 1) {
+cout << "Enter words: ";
+cin.ignore();
+getline(cin, name) ;
+
+
+
+
+  cout << "**********************************************" << endl; 
+  cout << "STRING MENU           " << endl ;
+  cout << "[1]. Vowels, consonant, substring, and compare " << endl ;
+  cout << "[2]. Length, Index" << endl ;
+  cout << "[3]. Replace, Delete" << endl ;
+
+cout << endl <<"Select Number: ";
+cin >> sel ; 
+cout << "**********************************************" << endl; 
+if(sel == 1) {
+int v=0, c=0, t, h;
+    
+    
+    
+  for (int x = 0; x<name.length(); x++) {
+  n = name.substr(x,1);
+    
+    if (n == "a" || n == "A" || n == "e" || n ==  " E" 
+     ||n == "i" || n == "I"|| n == "o" || n == "O" 
+     || n == "u" || n == "U" ) {
+     v++;
+    } else {
+      c++;
+    
+    }
+    }
+    cout << "vowels  - " << v << endl ;
+    cout << "Consonant - " << c << endl ;
+    
+    cout << "Enter initial: " << endl;
+    cin >> t >> h;
+    cout <<  "Substring: " << name.substr(t,h);
+    cout << endl;
+    cout << "compare: " << endl;
+    cout <<  "Enter Name: " ; 
+    cin.ignore();
+    getline(cin, name1);
+    cout << "compare: " <<name.compare(name1);
+    cout << endl;
+     } else if(sel == 2) {
+     
+    cout << "The length is " << name.length() << endl;
+    cout << "Enter to search: " ; 
+     cin >> ho;
+    for (int x = 0; x<name.length(); x++) {
+    if (name[x] == ho) { 
+     cout << "The character " << ho << " is in the index " << x+1 << endl;
+      } 
+  } 
+    }else if (sel == 3) {
+    std:: string gg;
+    int j, y;
+    cout <<"Enter initial and length " <<endl;
+    cin>> j >> y;
+    cout << "Enter word: ";
+    cin>>wo;
+    
+    cout << "After replacing: " <<name.replace(j, y, wo) <<endl ;
+    cout << "Deleted: " << name.erase(j,y);
+    
+    }
+}
