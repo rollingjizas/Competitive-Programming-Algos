@@ -1,0 +1,84 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main(){
+	int ray[6];
+	int put;
+	int occr, occr1=0;
+	int rept;
+	int upper;
+	int lower;
+	int xpnt;	
+	cout << "enter a number  only [5]: "  ;
+	cin>> put;
+	
+	
+	for(int x=0; x<put; x++){
+		cout << "["<< x  << "]" << " ";	
+	cin  >> ray[x];
+	cout << "\n";
+	
+
+}
+
+	cout << "\n";
+	cout << "find a #: ";
+	cin >> occr;
+
+	for(int y=0; y<put; y++){
+		if (occr ==y){
+		occr1 =1;
+			cout << "Occurences of the given # are:  " << ray[y] <<  "\n";
+	break;	
+	}
+	
+}
+			 int foop =0;
+		for(int xy=0; xy<put; xy++){
+		foop=-0;
+		for(int yaa=2; yaa<=ray[xy]/2; yaa++){
+			if((ray[xy]% yaa)==0){
+		 
+			foop++;
+			}
+		}
+			if(foop!=0){
+		
+					 cout <<ray[xy] << " Not a Prime" << "\n";
+			
+		}
+		else
+			cout << ray[xy] << " Prime" << "\n";				
+}
+
+
+			cout << "\n";
+						for(int z=0; z<put; z++){
+				if(upper < ray[z]){
+					upper =ray[z];					
+				}
+				}
+						for(int xxz=0; xxz<put; xxz++){
+				
+				if(lower > ray[xxz]){
+				
+					lower = ray[xxz];
+									
+				}
+				}
+			cout << " Highest # is: " << upper << "\n";				 	
+			cout << " Lower # is: " << lower << "\n";
+			
+			
+				for(int bts=0; bts<put; bts++){
+						xpnt=pow(ray[bts], bts);
+					cout << ray[bts] << " Exponent " << bts << " to " <<   xpnt  << " " << "\n";
+				}
+			
+			
+			
+			
+	system ("pause");
+
+}
