@@ -1,0 +1,129 @@
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+
+int main(){
+	
+	int put;
+	
+	
+	cout <<"~~~~~~~~~ M A I N MENU ~~~~~~~~" << "\n";
+	cout <<"~  [1] Divisbile by 5         ~" <<"\n";
+	cout <<"~  [2] Positive Integer n > 2 ~" <<"\n";	
+	cout <<"~  [3] Divisible by 6         ~" <<"\n";
+	cout <<"~  [4] E X I T                ~" <<"\n";	
+	cout <<"~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" << "\n";
+	cout <<"      ~ INPUT ONLY [1-4]~" <<"\n";
+	cout <<"~ Please Select no. ";
+	cin  >> put;
+	
+	
+	
+	switch(put){
+		
+		case 1:{
+			int div5,base=11,r=1,ovrll;
+	cout <<"~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" << "\n";
+	cout <<"Enter no. ";
+	cin  >> div5;
+	cout << "\n";
+	
+		 while (div5!= 0) {
+        r *= base;
+        --div5;
+     
+    }
+    ovrll=r-6;
+        cout<< "Let m be the + Integer Inputed" << "\n";   
+        	cout << "\n";
+    cout<< "               11^(m) -6 = " << ovrll << "\n";
+    
+    if(ovrll% 5==0){
+       cout<< "  The + Integers Inputed is Divisible  by 5" << "\n";
+	}	
+				cout << "\n";
+			break;
+	}//end of case 1
+	
+	
+		case 2:{
+			
+			    int great,least;
+    int base=2, r=1,recip=2;
+	cout <<"~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" << "\n";
+	cout <<"Enter no. ";
+    cin >> great;
+					if(great>2){
+
+		least =great*recip;
+    while (great != 0) {
+        r *= base;
+        --great;
+     
+    }
+    	    	cout<< "  Let o be the + Integer Inputed" << "\n";	
+				 	       	cout << "\n";	
+    cout<<"               " << r << " > "<< least<< "\n";
+ 	
+
+ 	if(r > least){
+
+ 		    cout << "          2^(o) > 2(o) = TRUE" << "\n";
+ 		    cout << "\n";
+	 }   
+	
+	 }else{
+	 	    cout << "\n";
+	  		    cout << "     ! ! ! ! ! INVALID, Input must be +3 Intgers ! ! ! ! !" << "\n";	
+	 }
+	 
+
+			break;
+	}//end ofcase 2
+		
+		case 3:{
+			
+				int div5=3,base,r=1,ovrll;
+	cout <<"~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~" << "\n";
+	cout <<"Enter no. ";
+	cin  >> base;
+	cout << "\n";
+	
+		 while (div5!= 0) {
+        r *= base;
+        --div5;
+     
+    }
+    ovrll=r-base;
+    cout<< "Let n be the + Integer Inputed" << "\n";  
+		cout << "\n"; 
+    cout<< "               n^(3)-n = " << ovrll << "\n";
+    
+    if(ovrll% 6==0){
+       cout<< "  The + Integers Inputed is Divisible  by 6" << "\n";
+	}	
+				cout << "\n";
+			
+			break;
+	}//end ofcase 3
+		
+		case 4:{
+			system("cls");
+				cout << "\n";
+		cout <<"   ! ! ! ! ! ! ! Exterminate Program Successfully ! ! ! ! ! ! !" <<"\n";
+		cout <<"\n";
+			break;
+	}//end ofcase 4
+
+	
+	
+	default:
+		system("cls");
+		cout <<"   ! ! ! ! ! ! !Error Input,ONLY [1-4] ! ! ! ! ! ! !" <<"\n";	
+			cout <<"\n";	
+	}//end of switch
+	
+	system("pause");
+}
